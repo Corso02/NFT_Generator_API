@@ -1,0 +1,25 @@
+{
+  "name": "NFT_Generator_API",
+  "version": "1.0.0",
+  "description": "NFT generator from SVG assets. This is API for this project.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Corso02/NFT_Generator_API.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Corso02/NFT_Generator_API/issues"
+  },
+  "homepage": "https://github.com/Corso02/NFT_Generator_API#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.14"
+  }
+}
