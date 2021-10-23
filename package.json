@@ -19,7 +19,10 @@
   },
   "homepage": "https://github.com/Corso02/NFT_Generator_API#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1",
-    "nodemon": "^2.0.14"
+    "express-fileupload": "^1.2.1",
+    "nodemon": "^2.0.14",
+    "svg-sprite": "^1.5.3"
   }
 }
