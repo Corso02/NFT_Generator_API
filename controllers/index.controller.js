@@ -42,29 +42,33 @@ let spriter = new spriterSVG(config)
 
 exports.upload = (req, res) => {
     console.log(req.files)
-    for(let i = 0; i < req.files.svgs.length; i++){
-        spriter.add(path.resolve("../", req.files.svgs[i].tempFilePath), null, fs.readFileSync(path.resolve("../", req.files.svgs[i].tempFilePath), "utf8"))    
+    if(req.files){
+        console.log("got files")
+        console.log(req.files)
+        // for(let i = 0; i < req.files.svgs.length; i++){
+        //     spriter.add(path.resolve("../", req.files.svgs[i].tempFilePath), null, fs.readFileSync(path.resolve("../", req.files.svgs[i].tempFilePath), "utf8"))    
+        // }
+        // let resultSvgs = []
+        // spriter.compile((err, result) => {
+        //     for(let mode in result){
+        //         for(let resource in result[mode]){
+        //             resultSvgs.push(result[mode][resource].contents.toString("utf8"))          
+        //         }
+        //     }
+        //     let filteredSvgs = []
+        //     for(let idx in resultSvgs){
+        //         let svg = resultSvgs[idx]
+        //         if(svg.includes("<style>")){
+        //             let styleBeginIdx = svg.indexOf("<style>")
+        //             let styleEndIdx = svg.indexOf("</style>")
+        //             let firstHalf = svg.substring(0, styleBeginIdx)
+        //             let secondHalf = svg.substring(styleEndIdx + 8)
+        //             let finalSvg = firstHalf + secondHalf
+        //             filteredSvgs.push(finalSvg)
+        //         }
+        //     }
+        //     console.log(filteredSvgs)
+        //     res.send({filteredSvgs})
+        // })
     }
-    let resultSvgs = []
-    spriter.compile((err, result) => {
-        for(let mode in result){
-            for(let resource in result[mode]){
-                resultSvgs.push(result[mode][resource].contents.toString("utf8"))          
-            }
-        }
-        let filteredSvgs = []
-        for(let idx in resultSvgs){
-            let svg = resultSvgs[idx]
-            if(svg.includes("<style>")){
-                let styleBeginIdx = svg.indexOf("<style>")
-                let styleEndIdx = svg.indexOf("</style>")
-                let firstHalf = svg.substring(0, styleBeginIdx)
-                let secondHalf = svg.substring(styleEndIdx + 8)
-                let finalSvg = firstHalf + secondHalf
-                filteredSvgs.push(finalSvg)
-            }
-        }
-        console.log(filteredSvgs)
-        res.send({filteredSvgs})
-    })
 }
